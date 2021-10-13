@@ -1,0 +1,5 @@
+.vscode
+*.o
+dist/test-repo
+dist/debug*
+dist/playground
