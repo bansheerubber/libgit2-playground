@@ -37,6 +37,12 @@ int lg2_push(git_repository* repo) {
 	
 	check_lg2(git_push_options_init(&options, GIT_PUSH_OPTIONS_VERSION), "Error initializing push", NULL);
 
+	const char *args[2] = {"how do you do?", "very swell"};
+	options.arguments = (git_strarray){
+		args,
+		2
+	};
+
 	check_lg2(git_remote_push(remote, &refspecs, &options), "Error pushing", NULL);
 
 	printf("pushed\n");
